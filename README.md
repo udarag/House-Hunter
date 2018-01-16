@@ -1,4 +1,4 @@
-# csc648-fall17-team02
+# CSC 648 Software Engineering
 
-- This is the github repo for team 2 in section 2 of CSC 648.
+This is a mirror of the github repo made for a term project built collaboratively by a team of 5 students. The project is a real estate website. All documentation can be found within the repo. 
 
