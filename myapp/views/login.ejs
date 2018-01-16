@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/head %>
+
+</head>
+
+<body>
+<header>
+    <% include partials/header %>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+<div class="panel-primary">
+  <div class="panel-heading"> Log In</div>
+
+<!-- <form method="post" action="sell" enctype="multipart/form-data" >
+-->
+        <form id="logInForm" action="login" method="post">
+
+  <div class="panel-body">
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+      <input id="email" type="email" class="form-control" name="email" placeholder="Enter Email" required/>
+    </div><br>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+      <input id="password" type="password" class="form-control" name="pwd" placeholder="Enter password" required/>
+    </div><br>
+  <div class="panel-footer text-right">
+<!-- input type="submit" -->
+    <a class="btn btn-warning" role="button" href="https://sfsuse.com/fa17g02/">Back</a>
+    <a href="signUp"><button type="button" class="btn btn-basic">Register </button></a>
+    <button class="btn btn-primary" name="submit" value="Submit"/>Log In </button>
+  </div>
+</form>
+</div>
+
+        </div>
+    </div>
+</div>
+
+<div id="emp">
+</div>
+
+<div id="footer">
+    <% include partials/footer %>
+</div>
+
+<% include partials/style %>
+<% include partials/plugins %>
+
+</body>
+</html>

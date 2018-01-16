@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include partials/head %>
+
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            th, td {
+                border: 1px solid #ccc;
+                padding: 10px;
+            }
+            table.alt tr:nth-child(even) {
+                background-color: #eee;
+            }
+            table.alt tr:nth-child(odd) {
+                background-color: #fff;
+            }            
+	</style>
+</head>
+<body>
+<header>
+    <% include partials/header %>
+</header>
+<div class="jambotron text-center">
+    <h1> Agents Dashboard</h1>
+    <hr>
+    <div class="container">
+        <div class="row">
+
+        <table class="alt">
+            <tr>
+                <th>Property Posted </th>
+                <th>Query Received</th> 
+                <th>From User</th>
+            </tr>
+	<% for (var i = 0; i < data.length; i++) { %>
+            <tr>
+                <td><%= data[i].listingId %></td>
+                <td><%= data[i].Query %></td>
+                <td><%= data[i].UserName %></td>
+            </tr>
+            <% } %>
+        </table>
+            </div>
+        </div>
+    </div>
+
+<div id="emp">
+</div>
+<div id="emp">
+</div>
+<div id="footer">
+    <% include partials/footer %>
+</div>
+
+<% include partials/style %>
+<% include partials/plugins %>
+
+</body>
+</html>

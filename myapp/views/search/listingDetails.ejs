@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body>
+<header>
+    <% include ../partials/header %>
+</header>
+
+<br>
+ <a class="btn btn-info" role="button" href="https://sfsuse.com/fa17g02/search?q=">Back</a>
+
+<div class="container text-center">
+    <div class="row">
+        <div class="col-sm-12">
+<br>
+      <form class="search" action="../search" method="get">
+        <div class="input-group">
+          <div class="input-group-addon"><span><i class="glyphicon glyphicon-search"></i></span></div>
+          <input class="form-control search bar" type="text" placeholder="&nbsp  Enter Street, City, State, or Zip" maxlength="40" name="q">
+          <div class="input-group-btn"><button  class="btn btn-success" type="submit">Search </button></div>
+        </div>
+      </form>
+
+        </div>
+    </div>
+</div>
+
+    <div id="emp">
+    </div>
+
+<div class="container">
+
+<% for (var i = 0; i < data.length; i++) { %>
+<div class="row">
+
+    <hr>
+    <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
+        <img id="listingImage" class="thumbnail" src="https://sfsuse.com/fa17g02/images/<%= data[i].Image %>" class="img-responsive center-block"/>
+    </div>
+
+    <div id="map" class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
+    </div>
+</div>
+<% } %>
+
+</div>
+
+<div class="container">
+
+<% for (var i = 0; i < data.length; i++) { %>
+<div class="row">
+
+    <hr>
+    <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
+	<h1> House Description:</h1>
+        <br>
+       <% for (var i = 0; i < data.length; i++) { %>
+         <div id="description">
+           <p id="address"><b> Address: </b> <%= data[i].Address %>
+             , <%= data[i].City %> <%= data[i].Zip %> <%= data[i].State %> </p>
+           <p id="price"><b> Price: </b> <%= data[i].Price %>
+           <p id="bedrooms"><b> Bedrooms: </b> <%= data[i].Bedrooms %>
+           <p id="bathrooms"><b> Bathrooms: </b> <%= data[i].Bathrooms %>
+       <% } %>
+	</div>
+    </div>
+
+    <div id="ContactAgentContainer" class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
+        <h3> Contact Agent: </h3>
+	<br>
+       <% for (var i = 0; i < data.length; i++) { %>
+      <form class="contactAgent" action="<%= data[i].id %>"  method="post">
+       <p id="description"> <b>Agent Name: </b> <%= data[i].AgentName %> </p>
+         <input id="AgentName" class="form-control search bar" value="<%= data[i].AgentName %>" type="hidden" style="width:90px"  name="AgentName" readonly="readonly">
+    <label for="query"><p id="description"> Post your Query:</label></p>
+    <textarea name="Query" rows="4" cols="50" required/>Hello, I'm interested in this property and I would like to know the further details about it.
+Please contact me @ +1 9999999999</textarea>
+    <br>
+    <button class="btn btn-primary" name="submit" style="float:right" value="Submit"/> Submit </button>
+      </form>
+        </div>
+       <% } %>
+    </div>
+</div>
+<% } %>
+</div>
+
+       <% if (data.length == 0) { %>
+         <div class="row">
+           <b> Listing Not Found </b> <br>
+         </div>
+       <% } %>
+     </div>
+   </div>
+ </div>   
+</div>
+
+    <div id="emp">
+    </div>
+    <div id="emp">
+    </div>
+
+<script>
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 14,
+            center: {lat: 37.7749, lng: -122.4194}
+        });
+        var geocoder = new google.maps.Geocoder();
+        geocodeAddress(geocoder, map)
+    }
+
+    function geocodeAddress(geocoder, resultsMap) {
+        <% for (var i = 0; i < data.length; i++) { %>
+        geocoder.geocode({'address': '<%= data[i].Address %>, <%= data[i].City %> <%= data[i].Zip %> <%= data[i].State %>'}, function (results, status) {
+            if (status === 'OK') {
+                resultsMap.setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                    map: resultsMap,
+                    position: results[0].geometry.location
+                });
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+        <% } %>
+    }
+</script>
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAehS__N7Fe6CJQo43l90_fgRMsLzR7uUo&callback=initMap">
+</script>
+
+<div id=footer>
+    <% include ../partials/footer %>
+</div>
+
+<% include ../partials/style %>
+<% include ../partials/plugins %>
+</body>
+</html>
+

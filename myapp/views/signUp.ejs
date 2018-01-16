@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/head %>
+
+</head>
+
+<body>
+<header>
+    <% include partials/header %>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+	<div>
+
+<div class="panel-primary">
+  <div class="panel-heading"> Register</div>
+
+	<form id="signUpForm" action="signUp" method="post">
+
+  <div class="panel-body">
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <input id="firstName" type="text" class="form-control" name="firstName" placeholder="Enter First Name" required/>
+    </div><br>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <input id="lastName" type="text" class="form-control" name="lastName" placeholder="Enter Last Name" required/>
+    </div><br> 
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+      <input id="email" type="email" class="form-control" name="email" placeholder="Enter Email" required/>
+    </div><br>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+      <input id="password" type="password" class="form-control" name="password" placeholder="Enter password" required/>
+    </div><br>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+      <input id="confirmPassword" type="password" class="form-control" name="confirmPassword" placeholder="Re-enter password" required/>
+    </div><br>
+    <div class="radiobox">
+      <input id="accountType" type="radio" name="accountType" value="Buyer" required/> Buyer
+    </div><br>
+    <div class="radiobox">
+      <input id="accountType" type="radio" name="accountType" value="Seller" required/> Seller
+    </div><br>
+    <div class="checkbox">
+           <label class="control-label">
+         <input type="checkbox" id="agree" required/>I agree to the terms of service.</label>
+      </div><br>
+ </div>
+  <div class="panel-footer text-right">
+<!-- input type="submit" -->
+    <a class="btn btn-warning" role="button" href="https://sfsuse.com/fa17g02/">Back</a>
+    <a href="login"><button type="button" class="btn btn-basic">Login </button></a>
+    <button class="btn btn-primary" name="submit" value="Submit">Register</button>
+  </div>
+</form>
+</div>
+
+	  </div>
+        </div>
+    </div>
+</div>
+
+<div id="emp">
+</div>
+
+<div id="footer">
+    <% include partials/footer %>
+</div>
+
+<% include partials/style %>
+<% include partials/plugins %>
+
+</body>
+</html>

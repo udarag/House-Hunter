@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/head %>
+</head>
+
+<body>
+<header>
+    <% include partials/header %>
+</header>
+
+    <div id="house">
+        <h2 style="font-size:59px;font-family:Cookie, sans-serif;color:#ffffff;line-height:54px;text-shadow: 2px 2px 4px #000000;">Find Your New House</h2>        
+
+	<br>
+    <div class="container">
+      <form class="search" action="search" method="get">
+        <div class="input-group">
+          <div class="input-group-addon"><span><i class="glyphicon glyphicon-search"></i></span></div>
+          <input class="form-control search bar" type="text" placeholder="&nbsp Enter Street, City, State, or Zip" maxlength="40" name="q">
+          <div class="input-group-btn"><button  class="btn btn-success" type="submit">Search </button></div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+    <div class="container site-section" id="featuredHouses">
+        <h3> Featured Houses</h3>
+        <div class="col-md-12">
+            <div class="row">
+               <div class="col-md-4 col-sm-12">
+                <div class="thumbnail">
+		 <a href="https://sfsuse.com/fa17g02/listing/1">
+                  <img src="https://sfsuse.com/fa17g02/images/business.jpg" />
+              <div class="row house-text-details">
+               <div class="col-md-12">
+                   <p> 1600 Holloway Avenue , San Francisco, CA 94132</p>
+		</a>
+               </div>
+           </div>
+       </div>
+   </div>
+
+               <div class="col-md-4 col-sm-12">
+                <div class="thumbnail">
+                 <a href="https://sfsuse.com/fa17g02/listing/3">
+                  <img src="https://sfsuse.com/fa17g02/images/cesarChavez.jpg" />
+              <div class="row house-text-details">
+               <div class="col-md-12">
+                   <p> 1600 Holloway Avenue , San Jose, CA 94132</p>
+                </a>
+               </div>
+           </div>
+       </div>
+   </div>
+
+               <div class="col-md-4 col-sm-12">
+                <div class="thumbnail">
+                 <a href="https://sfsuse.com/fa17g02/listing/5">
+                  <img src="https://sfsuse.com/fa17g02/images/library.jpg" />
+              <div class="row house-text-details">
+               <div class="col-md-12">
+                   <p>835 Market Street, San Francisco, CA, 94103</p>
+                </a>
+               </div>
+           </div>
+       </div>
+   </div>
+
+
+
+</div>
+</div>
+</div>
+
+    <div id="emp">
+    </div>
+
+
+<div id="footer">
+    <% include partials/footer %>
+</div>
+
+<% include partials/style %>
+<% include partials/plugins %>
+
+</body>
+</html>

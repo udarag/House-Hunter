@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/head %>
+
+
+<style>
+
+    .panel-primary{
+      padding-top: 5%;
+      padding-left: 20%;
+      padding-right: 20%;
+    }
+</style>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+<header>
+    <% include partials/header %>
+</header>
+
+
+<div class="container">
+ <h2> Post your property for Sale </h2>
+<!--        <p class="btn btn-primary" data-toggle="modal" data-target="#myModal" role="button">Add Listing</p>
+ --> <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add Listing </button>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Post your property for Sale </h4>
+        </div>
+
+
+<form method="post" action="sell" enctype="multipart/form-data" >
+                        <div class="modal-body">
+    <label for="address"> Street Address:</label>
+    <input type="text" id="address" name="address" placeholder="1600, Holloway Avenue" required/>
+    <br><br>
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city" placeholder="San Francisco" required/>
+    <br><br>
+    <label for="state">State:</label>
+    <input type="text" id="state" name="state" placeholder="CA" required/>
+    <br><br>
+    <label for="zip">Zip:</label>
+    <input type="text" pattern="[0-9]{5}" id="zip" name="zip" min="0" placeholder="94132" required/>
+    <br><br>
+    <label for="price">Price: $</label>
+    <input type="number" id="price" name="price" min="0" placeholder="10000" required/>
+    <br><br>
+        <label for="bedrooms">Bedrooms:</label>
+    <input type="number" id="bedrooms" name="bedrooms" min="0"  placeholder="3" required/>
+    <br><br>
+        <label for="bathrooms">Bathrooms:</label>
+    <input type="number" id="bathrooms" name="bathrooms" min="0" placeholder="1" required/>
+    <br><br>
+
+    <label for="filetoupload">Property Image</label>
+    <input type="file" id="filetoupload" name="filetoupload" required/> <br/>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-default" style="float:left" data-dismiss="modal"> Cancel </button>
+                            <button class="btn btn-primary" name="submit" value="Submit"/> Upload </button>
+                        </div>
+</form>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+    <div id="emp">
+    </div>
+
+<div id="footer">
+    <% include partials/footer %>
+</div>
+
+<% include partials/style %>
+<% include partials/plugins %>
+
+</body>
+</html>
